@@ -1,5 +1,10 @@
 from django.urls import path
-from .views import CartView, ProductView, ShopView
+from rest_framework import routers
+from .views import CartView, ProductView, ShopView, CartViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'cart', CartViewSet)
 
 app_name = 'store'
 
